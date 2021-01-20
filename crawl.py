@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import requests
 import facebook
 import json
+# from social_data import Social_data_fetch
 app = FastAPI()
 
 # fc_post_id = '197394889304_10159954783384305'
@@ -31,7 +32,7 @@ def Social_data_fetch(post_id):
 
     response = json.dumps(dict_, indent=2)
 
-    response = response.replace('\"', '').replace('\n', '')
+    response = response.replace('\"', ' ').replace('\n', ' ')
 
     return response
 

@@ -25,7 +25,12 @@ def Social_data_fetch(post_id):
     dict_ = {'Reactions': reactions_dict, 'Total Shares ': shares, 'Total Comments ': comments,
              'Total Reaction Counts ': reactions_count}
 
-    return dict_
+    response = json.dumps(dict_, indent=2)
+
+    response = response.replace('\"', ' ').replace('\n', ' ')
+
+    # print(' resp - type :', type(response))
+    return response
 
 
 # social_data_fetch()
