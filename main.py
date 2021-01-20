@@ -8,11 +8,11 @@ app = FastAPI()
 #post_id = '147398588635445_4802642903110967'
 
 
-@app.get("/ facebook/post_id={post_id}")
+@app.get("/facebook/post_id={post_id}")
 def Social_data_fetch(post_id):
     acc_token = "139033756598933|GREeGVe5-IEFLnVALH0MnRaXNbY"
     fields = 'shares.summary(1).limit(1),comments.summary(true),reactions.summary(1),reactions.type(LIKE).limit(0).summary(1).as(like),reactions.type(LOVE).limit(0).summary(1).as(love),reactions.type(HAHA).limit(0).summary(1).as(haha),reactions.type(WOW).limit(0).summary(1).as(wow),reactions.type(SAD).limit(0).summary(1).as(sad),reactions.type(ANGRY).limit(0).summary(1).as(angry),reactions.type(CARE).limit(0).summary(1).as(care)'
-    url = f"https://graph.facebook.com/v8.0/{post_id}/?fields={fields}&access_token={acc_token}"
+    url = f"https://graph.facebook.com/v9.0/{post_id}/?fields={fields}&access_token={acc_token}"
     result = requests.get(url).json()
     shares = result['shares']['count']
     comments = result['comments']['summary']['total_count']
@@ -34,9 +34,3 @@ def Social_data_fetch(post_id):
     response = response.replace('\"', '').replace('\n', '')
 
     return response
-
-
-# @app.get("/ facebook/post_id={post_id}")
-# def social_data(post_id):
-#     output = Social_data_fetch(post_id)
-#     return output
