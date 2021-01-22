@@ -10,8 +10,8 @@ fc_post_id = '197394889304_10159954783384305'
 # post_id = '147398588635445_4802642903110967'
 page_id = 197394889304_1296107324101971
 
-aws_access_key_id = 'AKIA3M4LJ3HMVYHXMMCO'
-aws_secret_access_key = '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'
+aws_access_key_id = '**********'
+aws_secret_access_key = '********'
 acc_token = "139033756598933|GREeGVe5-IEFLnVALH0MnRaXNbY"
 
 
